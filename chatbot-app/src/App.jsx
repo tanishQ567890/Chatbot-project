@@ -1,11 +1,13 @@
 import React from "react"
 import Chat from "./Components/Chat";
-function App() {
+import SidePanel from "./Components/SidePanel";
 
+function App() {
   return (
     <>
-      <Chat/>
-          </>
+      <Chat />
+      <SidePanel />
+    </>
   )
 }
 
