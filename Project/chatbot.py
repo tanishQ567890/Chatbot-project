@@ -17,7 +17,7 @@ app.add_middleware(
 )
 
 llm = OllamaLLM(
-    model="llama3",
+    model="llama3.2",
     temperature=0.5,
     top_k=40,
     top_p=0.9,
@@ -116,7 +116,7 @@ def chat(req: ChatRequest):
     except Exception as e:
         raise HTTPException(
             status_code=503,
-            detail="Bruno is currently unavailable. Make sure Ollama is running with LLaMA 3. Error: " + str(e),
+            detail="Bruno is currently unavailable. Make sure Ollama is running with LLaMA 3.2. Error: " + str(e),
         )
 
     answer = clean_response(raw_answer)
@@ -138,4 +138,4 @@ def clear(req: ClearRequest):
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "model": "llama3"}
+    return {"status": "ok", "model": "llama3.2"}
